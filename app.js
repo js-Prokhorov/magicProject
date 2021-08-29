@@ -7,6 +7,7 @@ const csp = require('express-csp');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
+const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
 const globalErrorHandler = require('./controllers/errorController');
@@ -28,6 +29,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // GLOBAL MIDDLEWARES
+//Implement CORS
+app.use(cors());
+
 //set security http headers
 app.use(helmet());
 csp.extend(app, {
