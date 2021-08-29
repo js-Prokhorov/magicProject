@@ -88,7 +88,7 @@ csp.extend(app, {
         'https://*.stripe.com',
         'https://*.mapbox.com',
         'https://*.cloudflare.com/',
-        'https://bundle.js:*',
+        'https://index.js:*',
         'ws://localhost:*/',
       ],
     },
