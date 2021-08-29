@@ -84,7 +84,7 @@ csp.extend(app, {
         'unsafe-inline',
         'data:',
         'blob:',
-        'wss://<HEROKU-SUBDOMAIN>.herokuapp.com:<PORT>/',
+        `wss://mighty-ridge-10238.herokuapp.com:${process.env.PORT}/`,
         'https://*.stripe.com',
         'https://*.mapbox.com',
         'https://*.cloudflare.com/',
