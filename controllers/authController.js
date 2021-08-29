@@ -51,7 +51,7 @@ exports.signup = catchAsync(async (req,res,next) => {
         passwordChangedAt: req.body.passwordChangedAt
     });
     const url = `${req.protocol}://${req.get('host')}/me`;
-    console.log(url);
+    // console.log(url);
     await new Email(newUser, url).sendWelcome();
     createSendToken(newUser, 201, res);
     
@@ -74,7 +74,7 @@ exports.login = catchAsync (async (req,res,next) => {
         return next(new AppError('Неверный имейл или пароль', 401))
     };
 
-    console.log(user);
+    // console.log(user);
 
     //3) Если всё верно, отправить токен клиенту
     createSendToken(user, 200, res);
@@ -94,7 +94,7 @@ exports.isLoggedIn = async (req,res,next) => {
 
     //1) верифицировать токен
       const decoded = await promisify(jwt.verify)(req.cookies.jwt, process.env.JWT_SECRET);
-      console.log(decoded);
+    //   console.log(decoded);
     //2)Проверить, существует ли всё ещё пользователь
     const checkedUser = await User.findById(decoded.id);
 
@@ -148,7 +148,7 @@ exports.protect = catchAsync (async (req,res,next) => {
         token = req.cookies.jwt
     }
 
-    console.log(token);
+    // console.log(token);
 
     if (!token) {
         return next(new AppError('Вы не вошли в аккаунт. Пожалуйста, авторизуйтесь!', 401))
@@ -156,7 +156,7 @@ exports.protect = catchAsync (async (req,res,next) => {
 
     //2)Верифицировать токен
       const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
-      console.log(decoded);
+    //   console.log(decoded);
     //3)Проверить, существует ли всё ещё пользователь
     const checkedUser = await User.findById(decoded.id);
     if(!checkedUser){
@@ -173,7 +173,7 @@ exports.protect = catchAsync (async (req,res,next) => {
     
     
     //Предоставить доступ к защищённому пути
-    console.log(`User ID from authController.protect function: ${checkedUser._id}`);
+    // console.log(`User ID from authController.protect function: ${checkedUser._id}`);
     req.user = checkedUser;
     res.locals.user = checkedUser;
     next();
@@ -211,7 +211,7 @@ exports.forgotPassword = catchAsync (async (req,res,next) => {
 
     //3)Отправить его на имейл пользователю
     const resetURL = `${req.protocol}://${req.get('host')}/api/v1/users/resetPassword/${resetToken}`;
-    console.log(resetURL);
+    // console.log(resetURL);
     const message = `Забыли свой пароль? Отправьте patch-запрос 
     с Вашим новым паролем (и подтверждённым паролем) по адрессу: ${resetURL}. \n Если Вы не отправляли запрос на восстановление пароля,
     пожалуйста, проигнорируйте данное письмо!`;

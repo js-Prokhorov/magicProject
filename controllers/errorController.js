@@ -55,7 +55,7 @@ const sendErrorProd = (err, req, res) => {
             })
         } else {
     
-            console.error('ERROR', err);
+            console.error('💥ERROR', err);
     
             res.status(500).json({
                 status: 'error',
@@ -71,7 +71,7 @@ const sendErrorProd = (err, req, res) => {
             })
         } else {
     
-            console.error('ERROR', err);
+            console.error('💥ERROR', err);
     
             res.status(err.statusCode).render('error', {
                 title: 'Упс! Что-то пошло не так!',

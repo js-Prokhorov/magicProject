@@ -79,7 +79,7 @@ exports.getAccount = (req,res,next) => {
 }
 
 exports.updateUserData = catchAsync (async (req, res, next) => {
- console.log('Это данные из html-формы', req.body);
+//  console.log('Это данные из html-формы', req.body);
  const updatedUser = await User.findByIdAndUpdate(req.user.id, {
    name: req.body.name,
    email: req.body.email

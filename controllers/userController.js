@@ -78,8 +78,8 @@ exports.getMe = (req,res,next) => {
 
 
 exports.updateMe = catchAsync (async(req,res,next) => {
-    console.log(req.file);
-    console.log(req.body);
+    // console.log(req.file);
+    // console.log(req.body);
     //1) Выдать ошибку, если в теле указан пароль (для этого другой маршрут)
     if(req.body.password || req.body.passwordConfirm){
         return next(

@@ -195,11 +195,11 @@ const tourSchema = new mongoose.Schema({
   })
 
 
-  tourSchema.post(/^find/, function(documents, next){
-    console.log(`Обработка квэри (Query) заняла ${Date.now() - this.start} милисекунд`);
-    // console.log(documents);
-    next();
-  })
+  // tourSchema.post(/^find/, function(documents, next){
+  //   console.log(`Обработка квэри (Query) заняла ${Date.now() - this.start} милисекунд`);
+  //   // console.log(documents);
+  //   next();
+  // })
 
 
 

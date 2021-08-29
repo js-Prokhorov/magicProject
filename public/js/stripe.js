@@ -7,8 +7,8 @@ export const bookTour = async tourId => {
     try {
 
         //1) Получить сессию с бэкэнда
-        const session = await axios(`http://127.0.0.1:3000/api/v1/bookings/checkout-session/${tourId}`)
-        console.log(session);
+        const session = await axios(`/api/v1/bookings/checkout-session/${tourId}`)
+        // console.log(session);
         //2) Создать checkout form + списать деньги с карты
         await stripe.redirectToCheckout({
             sessionId: session.data.session.id

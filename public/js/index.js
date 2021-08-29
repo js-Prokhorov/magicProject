@@ -18,12 +18,12 @@ const bookButton = document.getElementById('book-tour');
 //DELEGATION
 if(mapBox) {
     const locations = JSON.parse(mapBox.dataset.locations);
-    console.log(locations);
+    
     displayMap(locations);
 }
 
 if(loginForm){
-    console.log('Привет из Парсела!!!');
+    
 document.querySelector('.form').addEventListener('submit', e => {
     e.preventDefault();
     const email = document.getElementById('email').value;
@@ -45,7 +45,7 @@ if (userDataForm) {
         form.append('name', document.getElementById('name').value);
         form.append('email', document.getElementById('email').value);
         form.append('photo', document.getElementById('photo').files[0]);
-        console.log(form);
+        
     
         updateSettings(form, 'data');
     })

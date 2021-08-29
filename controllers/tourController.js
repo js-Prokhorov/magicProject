@@ -64,7 +64,7 @@ exports.resizeTourImages = catchAsync(async (req, res, next) => {
 
     req.body.images.push(filename);
   }));
-  console.log(req.body);
+  // console.log(req.body);
 
   next();
 });
@@ -189,7 +189,7 @@ exports.getToursWithin = catchAsync(async (req, res, next) => {
       400
     );
   }
-  console.log(distance, lat, lng, unit);
+  // console.log(distance, lat, lng, unit);
   //МангоДБ ожидает радиус в радианах, для этого нужно нашу величину поделить на радиус Земли в милях(3963.2)/км(6378.1)
 
   const tours = await Tour.find({
