@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {showAlert} from './alerts';
 //И для смены пароля, и для смены другой информации пользователя. type - или 'password' или 'data'
-export const updateSettings = async (data, type) => {
+export async function updateSettings (data, type) {
     try {
         const url =
           type === 'password'

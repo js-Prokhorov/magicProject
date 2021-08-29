@@ -1,6 +1,7 @@
+
 import axios from 'axios';
 import { showAlert } from './alerts';
-export const login = async (email, password) => {
+export async function login (email, password) {
     
     try {
         const result = await axios({
@@ -24,7 +25,7 @@ export const login = async (email, password) => {
     
 };
 
-export const logout = async () => {
+export async function logout () {
     try {
         const res = await axios({
             method: 'GET', 
