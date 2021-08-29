@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // GLOBAL MIDDLEWARES
 //set security http headers
-app.use(helmet());
+// app.use(helmet());
 csp.extend(app, {
   policy: {
     directives: {

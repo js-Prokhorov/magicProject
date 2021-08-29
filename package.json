@@ -2,7 +2,7 @@
   "name": "prokhor-magic-project",
   "version": "1.0.0",
   "description": "preparing an adventure",
-  "main": "app.js",
+  "main": "server.js",
   "targets": {
     "main": false
   },
@@ -11,8 +11,8 @@
     "dev": "cross-env NODE_ENV=development nodemon server.js",
     "start-prod": "cross-env NODE_ENV=production nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js/bundled --out-file bundle.js --public-url ./js",
-    "build:js": "parcel watch ./public/js/index.js --out-dir ./public/js/bundled --out-file bundle.js --public-url ./js"
+    "watch:js": "parcel serve ./public/js/index.js --dist-dir ./public/js/bundled",
+    "build": "parcel build ./public/js/index.js --dist-dir ./public/js/bundled"
   },
   "author": "Ivan Prokhorov",
   "license": "ISC",
