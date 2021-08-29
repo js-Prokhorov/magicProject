@@ -2,7 +2,7 @@
   "name": "prokhor-magic-project",
   "version": "1.0.0",
   "description": "preparing an adventure",
-  "main": "app.js",
+  "main": "server.js",
   "targets": {
     "main": false
   },
