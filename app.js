@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // GLOBAL MIDDLEWARES
 //set security http headers
-// app.use(helmet());
+app.use(helmet());
 csp.extend(app, {
   policy: {
     directives: {
@@ -88,7 +88,7 @@ csp.extend(app, {
         'https://*.stripe.com',
         'https://*.mapbox.com',
         'https://*.cloudflare.com/',
-        'https://index.js:*',
+        'https://bundle.js:*',
         'ws://localhost:*/',
       ],
     },
