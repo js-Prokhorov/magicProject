@@ -7,7 +7,8 @@
     "main": false
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=development nodemon server.js",
+    "start": "node server.js",
+    "dev": "cross-env NODE_ENV=development nodemon server.js",
     "start-prod": "cross-env NODE_ENV=production nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch:js": "parcel serve ./public/js/index.js --dist-dir ./public/js/bundled",
@@ -44,5 +45,8 @@
   "devDependencies": {
     "cross-env": "^7.0.3",
     "parcel": "^2.0.0-rc.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
